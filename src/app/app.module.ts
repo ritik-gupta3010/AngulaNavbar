@@ -9,13 +9,17 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { RouterModule } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ServicesComponent,
     AboutUsComponent,
-    ContactComponent
+    ContactComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +29,7 @@ import { RouterModule } from '@angular/router';
       {path: 'service', component: ServicesComponent},
       {path: 'about', component: AboutUsComponent},
       {path: 'contact', component: ContactComponent},
+      {path: 'register', component: RegisterComponent},
     ]),
   
   ],
