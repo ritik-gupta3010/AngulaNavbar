@@ -8,7 +8,7 @@ import { Validators, FormGroup, FormControl } from '@angular/forms';
 export class RegisterComponent {
   title = "Angular Reactive form"
   registerForm = new FormGroup({
-    fName:new FormControl('',[Validators.required]),
+    fName:new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(50)]),
     lName:new FormControl('',[Validators.required]),
     eMail:new FormControl('',[Validators.email]),
     mobileNumber:new FormControl('',[Validators.required]),

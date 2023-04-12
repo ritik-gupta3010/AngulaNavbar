@@ -4,7 +4,9 @@
         <label for="fName">First Name</label>
         <input id="fName" class="registerInput" type="text" placeholder="Enter your first name" formControlName="fName"
             required />
-        <span class="inputErr" *ngIf="fName && fName.invalid && fName.touched">This input field is not valid</span>
+        <span class="inputErr" *ngIf="fName && fName.errors && fName.errors['required'] && (fName.touched || fName.dirty)">This input field is not valid</span>
+        <span class="inputErr" *ngIf="fName && fName.errors && fName.errors['minlength'] && (fName.touched || fName.dirty)">This input field is too short</span>
+        <span class="inputErr" *ngIf="fName && fName.errors && fName.errors['maxlength'] && (fName.touched || fName.dirty)">This input field is too long</span>
         <label for="lName">Last Name</label>
         <input id="lName" class="registerInput" type="text" placeholder="Enter your last name" formControlName="lName"
             required />
