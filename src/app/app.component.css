@@ -1,0 +1,26 @@
+.nav
+{
+    background-color: rgb(65, 168, 168);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+.left
+{
+    flex:8;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px black;
+}
+.right
+{
+    flex: 4;
+    display: flex;
+    justify-content: space-between;
+}
+.right a{
+    color: white;
+}
+.right a:hover{
+    color: yellow;
+}
