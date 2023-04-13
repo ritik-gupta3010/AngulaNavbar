@@ -11,8 +11,8 @@ export class RegisterComponent {
     fName:new FormControl('',[Validators.required]),
     lName:new FormControl('',[Validators.required]),
     eMail:new FormControl('',[Validators.email]),
-    mobileNumber:new FormControl('',[Validators.required])
-    
+    mobileNumber:new FormControl('',[Validators.required]),
+    gender:new FormControl('',[Validators.required])
   })
   registerUser()
   {
@@ -37,5 +37,9 @@ export class RegisterComponent {
   get register()
   {
     return this.registerForm.get("register");
+  }
+  get gender()
+  {
+    return this.registerForm.get("gender");
   }
 }

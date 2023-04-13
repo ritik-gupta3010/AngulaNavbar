@@ -22,13 +22,16 @@
         <br>
         <div>
             <span>Gender :</span>
-            <input type="radio" id="male" name="gender" value="Male">
+            <input type="radio" id="male" name="gender" value="Male" formControlName="gender">
             <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="Female">
+            <input type="radio" id="female" name="gender" value="Female" formControlName="gender">
             <label for="female">Female</label>
-            <input type="radio" id="other" name="gender" value="other">
+            <input type="radio" id="other" name="gender" value="other" formControlName="gender">
             <label for="other">Other</label>
         </div>
+        <span class="inputErr" *ngIf="gender && gender.invalid">This input field is
+            not valid
+        </span>
         <br>
         <div>
             <label for="country">Country : </label>
@@ -44,7 +47,7 @@
         
         
         
-        <input class="registerButton" type="submit" value="Register" routerLink="/login"
+        <input class="registerButton" type="submit" value="Register" routerLink="/login" (click)="registerUser()"
             [disabled]="registerForm.invalid"/>
         <span class="inputErr" *ngIf="registerForm.invalid && 
         fName && fName.touched &&
