@@ -1,13 +1,13 @@
 .register {
-    height: 83vh;
+    /* height: 83vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(rgba(255, 255, 255, 0.5),
+    /* background: linear-gradient(rgba(255, 255, 255, 0.5),
             rgba(255, 255, 255, 0.5)),
         url("https://images.pexels.com/photos/317355/pexels-photo-317355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-    background-size: cover;
+    background-size: cover; */
 }
 
 .registerTitle {
@@ -20,9 +20,9 @@
     display: flex;
     flex-direction: column;
     border: 1px solid red;
-    padding: 5px;
+    padding: 15px;
     background-color: black;
-    width: 40%;
+    width: 35%;
     color: orange;
     border-radius: 10px;
     box-shadow: 0 0 5px 5px rgb(4, 0, 255);
@@ -52,11 +52,22 @@
 .country:focus {
     outline: none;
 }
+.registerButton1 {
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: teal;
+    /* color: white; */
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    width: 25%;
+}
 .registerButton {
     margin-top: 20px;
     cursor: pointer;
     background-color: teal;
-    color: white;
+    /* color: white; */
     padding: 10px;
     border: none;
     border-radius: 10px;
