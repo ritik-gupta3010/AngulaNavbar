@@ -12,12 +12,22 @@
 
 .registerTitle {
     font-size: 50px;
+    margin-top: -10px;
 }
 
 .registerForm {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    border: 1px solid red;
+    padding: 5px;
+    background-color: black;
+    width: 40%;
+    color: orange;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgb(4, 0, 255);
+
+
 }
 
 .registerInput {
@@ -30,7 +40,18 @@
 .registerInput:focus {
     outline: none;
 }
+.inputErr {
+    color: red;
+}
 
+.country{
+    border: none;
+    padding: 2px;
+    border-radius: 10px;
+}
+.country:focus {
+    outline: none;
+}
 .registerButton {
     margin-top: 20px;
     cursor: pointer;
@@ -40,4 +61,5 @@
     border: none;
     border-radius: 10px;
     text-align: center;
+    width: 25%;
 }

@@ -1,14 +1,71 @@
 <div class="register">
-    <span class="registerTitle">Register</span>
-    <form class="registerForm">
-        <label>First Name</label>
-        <input class="registerInput" type="text" placeholder="Enter your first name" required/>
-        <label>Last Name</label>
-        <input class="registerInput" type="text" placeholder="Enter your last name" required/>
+    <span class="registerTitle">Register Here</span>
+    <form class="registerForm" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+        <label for="fName">First Name</label>
+        <input id="fName" class="registerInput" type="text" placeholder="Enter your first name" formControlName="fName"
+            required />
+        <span class="inputErr" *ngIf="fName && fName.invalid && fName.touched">This input field is not valid</span>
+        <label for="lName">Last Name</label>
+        <input id="lName" class="registerInput" type="text" placeholder="Enter your last name" formControlName="lName"
+            required />
+        <span class="inputErr" *ngIf="lName && lName.invalid && lName.touched">This input field is not valid</span>
         <label>E-mail </label>
-        <input class="registerInput" type="email" placeholder="Enter your E-mail Address" required/>
+        <input class="registerInput" type="email" placeholder="Enter your E-mail Address" formControlName="eMail"
+            required />
+        <span class="inputErr" *ngIf="eMail && eMail.invalid && eMail.touched">This input field is not valid</span>
         <label>mobile number</label>
-        <input class="registerInput" type="number" placeholder="Enter your mobile nuber" required/>
-        <input class="registerButton" type="submit" value="Register"/>
+        <input class="registerInput" type="number" placeholder="Enter your mobile nuber" formControlName="mobileNumber"
+            required />
+        <span class="inputErr" *ngIf="mobileNumber && mobileNumber.invalid && mobileNumber.touched">This input field is
+            not valid
+        </span>
+        <br>
+        <div>
+            <span>Gender :</span>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+        </div>
+        <br>
+        <div>
+            <label for="country">Country : </label>
+            <select name="country" id="" class="country">
+                <option value="">select country</option>
+                <option value="india">India</option>
+                <option value="nepal">Nepal</option>
+                <option value="usa">USA</option>
+                <option value="england">England</option>
+                <option value="uk">UK</option>
+            </select>
+        </div>
+        
+        
+        
+        <input class="registerButton" type="submit" value="Register" routerLink="/login"
+            [disabled]="registerForm.invalid"/>
+        <span class="inputErr" *ngIf="registerForm.invalid && 
+        fName && fName.touched &&
+        lName && lName.touched &&
+        eMail && eMail.touched &&
+        mobileNumber && mobileNumber.touched 
+        ">Input fields is
+            not valid</span>
     </form>
 </div>
+
+
+<!-- <div class="register">
+    <form>
+        <div>
+            <label for="">First Name</label>
+            <input type="text">
+        </div>
+        <div>
+            <label for="">Last Name</label>
+            <input type="text">
+        </div>
+    </form>
+</div> -->
