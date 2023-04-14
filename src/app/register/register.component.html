@@ -85,13 +85,13 @@
             (mobileNumber.touched || mobileNumber.dirty)">
             mobile number is too long
         </span>
-        <br>
+        
 
 
         <div>
             <span>Gender :</span>
             <input type="radio" id="male" name="gender" value="Male" formControlName="gender">
-            <label for="male">Male</label>
+            <label>Male</label>
             <input type="radio" id="female" name="gender" value="Female" formControlName="gender">
             <label for="female">Female</label>
             <input type="radio" id="other" name="gender" value="other" formControlName="gender">
@@ -100,12 +100,12 @@
         <span class="inputErr" *ngIf="gender && gender.errors && gender.errors['required']">
             select gender
         </span>
-        <br>
+        
 
 
         <div>
             <label for="country">Country : </label>
-            <select name="country" id="" class="country">
+            <select name="country" class="country" formControlName="country">
                 <option value="">select country</option>
                 <option value="india">India</option>
                 <option value="nepal">Nepal</option>
@@ -114,7 +114,10 @@
                 <option value="uk">UK</option>
             </select>
         </div>
-
+        <span class="inputErr" *ngIf="country && country.errors && country.errors['required'] &&
+            (country.touched || country.dirty)">
+            Select country
+        </span>
 
 
         <label for="passWord">Password</label>
@@ -135,6 +138,11 @@
         <label for="repeatPassWord">Repeat Password</label>
         <input type="password" class="registerInput" placeholder="Enter your password again" 
         formControlName="repeatPassword">
+        <!-- <span class="inputErr" 
+            *ngIf="repeatPassword && repeatPassword.errors && repeatPassword.errors['required'] && 
+            (repeatPassword.touched || repeatPassword.dirty)"> 
+            repeat password is required
+        </span> -->
         <span class="inputErr"  [ngStyle]="{'display':repeatPassCSS}">Password mismatched</span>
 
 
@@ -142,7 +150,7 @@
         <!-- <button class="registerButton1" type="submit" [disabled]="registerForm.invalid" 
             (click)="registerUser()">Register</button> -->
         <input class="registerButton" type="submit" value="Register"
-            [disabled]="registerForm.invalid" />
+            [disabled]="registerForm.invalid"/>
         <span class="inputErr" *ngIf="registerForm.invalid" >
             Register button is disabled please fill the details in above field 
         </span>

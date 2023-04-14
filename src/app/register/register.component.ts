@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -26,22 +27,24 @@ export class RegisterComponent {
       Validators.pattern("[6-9][0-9]*")
     ]),
     gender:new FormControl('',[Validators.required]),
+    country:new FormControl('',[Validators.required]),
     passWord:new FormControl('',[Validators.required,
       Validators.minLength(6),
       Validators.maxLength(15),
       Validators.pattern("")
     ]),
-    repeatPassword:new FormControl('')
+    repeatPassword:new FormControl('',[Validators.required])
   })
   repeatPassCSS: String="none"
+  constructor(private router: Router) { }
+
   registerUser()
   {
-    console.log(this.registerForm.get("passWord")?.value)
-    console.log(this.registerForm.get("repeatPassword")?.value)
     if(this.registerForm.get("passWord")?.value == this.registerForm.get("repeatPassword")?.value)
     {
       alert("submitted");
-      console.log(this.registerForm.value)
+      console.log(this.registerForm.value);
+      this.router.navigate(['/login'])
     }
     else{
       this.repeatPassCSS="inline"
@@ -71,6 +74,10 @@ export class RegisterComponent {
   get gender()
   {
     return this.registerForm.get("gender");
+  }
+  get country()
+  {
+    return this.registerForm.get("country");
   }
   get passWord()
   {
