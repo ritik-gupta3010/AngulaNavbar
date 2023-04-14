@@ -47,6 +47,16 @@
         </span>
 
 
+        <label for="birthday">Date Of Birth</label>
+        <input class="registerInput" type="date" id="birthday" name="birthday"
+            formControlName="birthday" required/>
+        <span class="inputErr"
+            *ngIf="birthday && birthday.errors && birthday.errors['required'] 
+            && (birthday.touched || birthday.dirty)">
+            Date of birth is required
+        </span>
+
+
         <label for="email">E-mail </label>
         <input class="registerInput" type="email" placeholder="Enter your E-mail Address" 
             formControlName="eMail"

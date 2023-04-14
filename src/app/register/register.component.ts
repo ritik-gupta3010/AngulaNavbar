@@ -19,6 +19,7 @@ export class RegisterComponent {
       Validators.maxLength(50),
       Validators.pattern("[a-zA-Z]*")
     ]),
+    birthday:new FormControl('',[Validators.required]),
     eMail:new FormControl('',[Validators.required,
       Validators.email]),
     mobileNumber:new FormControl('',[Validators.required,
@@ -58,6 +59,10 @@ export class RegisterComponent {
   get lName()
   {
     return this.registerForm.get("lName");
+  }
+  get birthday()
+  {
+    return this.registerForm.get("birthday");
   }
   get eMail()
   {
